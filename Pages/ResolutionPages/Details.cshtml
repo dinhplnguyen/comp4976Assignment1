@@ -1,0 +1,43 @@
+@page
+@model SeedIdentity.Pages_ResolutionPages.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Resolution</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Resolution.CreationDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Resolution.CreationDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Resolution.Abstract)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Resolution.Abstract)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Resolution.Status)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Resolution.Status)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Resolution.UserId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Resolution.UserId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Resolution?.ResolutionId">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

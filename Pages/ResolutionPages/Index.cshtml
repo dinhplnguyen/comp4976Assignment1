@@ -1,0 +1,54 @@
+@page
+@model SeedIdentity.Pages_ResolutionPages.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Resolution[0].CreationDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Resolution[0].Abstract)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Resolution[0].Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Resolution[0].UserId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Resolution) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreationDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Abstract)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserId)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ResolutionId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ResolutionId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ResolutionId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

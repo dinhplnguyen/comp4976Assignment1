@@ -1,0 +1,16 @@
+﻿@* @inject AspNetCoreUserManager.UserManager UserManager *@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+    var inMemberRole = User.IsInRole("Member");
+    var inAdminRole = User.IsInRole("Admin");
+    var wtf = User.Identity.Name;
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Is Admin: @inAdminRole</p>
+    <p>Is Member: @inMemberRole</p>
+    <p>WTF: @wtf</p>
+</div>
